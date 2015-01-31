@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+</head>
+<style>
+    .starwipe{
+        background-color:yellow;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        position:fixed;
+        z-index:100000;
+        animate: star 3s;
+        -webkit-animation: star 1s linear;
+        -webkit-clip-path:polygon(-100% 0%, 0% 0%, 50% -130%, 100% 0%,200% 0%,130% 90%,220% 200%,50% 130%,-120% 200%,-30% 90%);
+        -moz-animation: star 1s linear;
+        -moz-clip-path:polygon(-100% 0%, 0% 0%, 50% -130%, 100% 0%,200% 0%,130% 90%,220% 200%,50% 130%,-120% 200%,-30% 90%);
+        animation: star 1s linear;
+        clip-path:polygon(-100% 0%, 0% 0%, 50% -130%, 100% 0%,200% 0%,130% 90%,220% 200%,50% 130%,-120% 200%,-30% 90%);
+    }
+    .unstarwipe{
+        background-color:yellow;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        position:fixed;
+        z-index:100000;
+        animate: star 3s;
+        -webkit-animation: unstar 1s linear;
+        -webkit-clip-path:polygon(50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%);
+        -moz-animation: unstar 1s linear;
+        -moz-clip-path:polygon(50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%j);
+        animation: unstar 1s linear;
+        clip-path:polygon(50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%);
+    }
+    @-keyframes star{
+        0% {
+        -webkit-clip-path:polygon(50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%);
+        }
+        100%{
+        -webkit-clip-path:polygon(-100% 0%, 0% 0%, 50% -130%, 100% 0%,200% 0%,130% 90%,220% 200%,50% 130%,-120% 200%,-30% 90%);
+        }
+    }
+    @-moz-keyframes star{
+        0% {
+        -webkit-clip-path:polygon(50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%);
+        }
+        100%{
+        -webkit-clip-path:polygon(-100% 0%, 0% 0%, 50% -130%, 100% 0%,200% 0%,130% 90%,220% 200%,50% 130%,-120% 200%,-30% 90%);
+        }
+    }
+    @-webkit-keyframes star{
+        0% {
+        -webkit-clip-path:polygon(50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%);
+        }
+        100%{
+        -webkit-clip-path:polygon(-100% 0%, 0% 0%, 50% -130%, 100% 0%,200% 0%,130% 90%,220% 200%,50% 130%,-120% 200%,-30% 90%);
+        }
+    }
+    @-keyframes unstar{
+        0%{
+        -webkit-clip-path:polygon(-100% 0%, 0% 0%, 50% -130%, 100% 0%,200% 0%,130% 90%,220% 200%,50% 130%,-120% 200%,-30% 90%);
+        }
+        100% {
+        -webkit-clip-path:polygon(50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%);
+        }
+    }
+    @-moz-keyframes unstar{
+        0%{
+        -webkit-clip-path:polygon(-100% 0%, 0% 0%, 50% -130%, 100% 0%,200% 0%,130% 90%,220% 200%,50% 130%,-120% 200%,-30% 90%);
+        }
+        100% {
+        -webkit-clip-path:polygon(50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%);
+        }
+    }
+    @-webkit-keyframes unstar{
+        0%{
+        -webkit-clip-path:polygon(-100% 0%, 0% 0%, 50% -130%, 100% 0%,200% 0%,130% 90%,220% 200%,50% 130%,-120% 200%,-30% 90%);
+        }
+        100% {
+        -webkit-clip-path:polygon(50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,50% 50%);
+        }
+    }
+</style>
+<body>
+</body>
+<script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+<script>
+$(function(){
+    fadeIn()
+})
+var fadeIn = function(){
+  $("body").prepend("<div class='unstarwipe' style='background-color:black'></div>")
+  setTimeout(function(){
+    $("body").prepend("<div class='unstarwipe' style='background-color:orange;'></div>")
+    setTimeout(function(){
+      $("body").prepend("<div class='unstarwipe' style='background-color:green;'></div>")
+      setTimeout(function(){
+        $("body").prepend("<div class='unstarwipe' style='background-color:blue;'></div>")
+        setTimeout(function(){
+          $("body").prepend("<div class='unstarwipe' style='background-color:red;'></div>")
+          setTimeout(function(){
+            $("body").prepend("<div class='unstarwipe' style='background-color:yellow;'></div>")
+          },200)
+        },200)
+      },200)
+    },200)
+  },200)
+}
+var fadeOut = function(link){
+  $("body").append("<div class='starwipe'></div>")
+  setTimeout(function(){
+    $("body").append("<div class='starwipe' style='background-color:red;'></div>")
+    setTimeout(function(){
+      $("body").append("<div class='starwipe' style='background-color:blue;'></div>")
+      setTimeout(function(){
+        $("body").append("<div class='starwipe' style='background-color:green;'></div>")
+        setTimeout(function(){
+          $("body").append("<div class='starwipe' style='background-color:orange;'></div>")
+          setTimeout(function(){
+            $("body").append("<div class='starwipe' style='background-color:black;'></div>")
+            setTimeout(function(){
+              window.location = link
+            },1000)
+          },200)
+        },200)
+      },200)
+    },200)
+  },200)
+}
+$(document).on("click",function(){fadeOut("/Users/erikhinton/starpuppies/index.html")})
+</script>
+</html>
